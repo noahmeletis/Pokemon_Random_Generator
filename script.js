@@ -65,3 +65,26 @@ const rattataMovesArr = rattataMovesStr.split(' ');
 const raticateMovesStr = 'Scary-Face Swords-Dance Tackle Tail-whip Quick-Attack Focus-Energy Bite Laser-Focus Take-Down Assurance Crunch Sucker-Punch Super-Fang Double-Edge Endeavor';
 const raticateMovesArr = raticateMovesStr.split(' ');
 
+//Pokemon Factory
+const pokemonFactory = (index, name, type, movesArr) =>{
+    return {
+        index:index,
+        name: name,
+        pokemonType: type,
+        possibleMoves: movesArr,
+        randMoves() {
+          let setMoves = [];
+          let newPossibleMoves = this.possibleMoves;
+          for (let i=0; i <4; i++ ){
+            let moveIndex = Math.floor(Math.random()*newPossibleMoves.length)
+            setMoves.push(newPossibleMoves[moveIndex]);
+            newPossibleMoves.splice(moveIndex, 1 );
+          }
+          return setMoves;
+        }
+    }
+}
+
+const bulbasaur = pokemonFactory(1, 'Bulbasaur', 'Grass', bulbasaurMovesArr);
+
+console.log(bulbasaur.randMoves());
