@@ -47,6 +47,7 @@ const kakunaMovesStr = 'Poison-Sting String-Shot Harden';
 const kakunaMovesArr = kakunaMovesStr.split(' ');
 
 const beedrillMovesStr = 'Poison-Sting String-Shot Harden Fury-Attack Focus-Energy Twineedle Rage Pin-Missle Agility';
+const beedrillMovesArr = beedrillMovesStr.split(' ');
 
 //016-018
 
@@ -85,6 +86,38 @@ const pokemonFactory = (index, name, type, movesArr) =>{
     }
 }
 
-const bulbasaur = pokemonFactory(1, 'Bulbasaur', 'Grass', bulbasaurMovesArr);
+const bulbasaur = pokemonFactory(1, 'Bulbasaur', ['Grass', 'Poison'], bulbasaurMovesArr);
+const ivysaur = pokemonFactory(2, 'Ivysaur',['Grass', 'Poison'], ivysaurMovesArr);
+const venusaur = pokemonFactory(3, 'Venusaur', ['Grass', 'Poison'], venusaurMovesArr );
 
-console.log(bulbasaur.randMoves());
+const charmander = pokemonFactory(4, 'Charmander', ['Fire'], charmanderMovesArr);
+const charmeleon = pokemonFactory(5, 'Charmeleon', ['Fire'], charmeleonMovesArr);
+const charizard = pokemonFactory(6, 'Charizard', ['Fire', 'Flying'], charizardMovesArr);
+
+const squirtle = pokemonFactory(7, 'Squirtle', ['Water'], squirtleMovesArr);
+const wartortle = pokemonFactory(8, 'Wartortle', ['Water'], wartortleMovesArr);
+const blastoise = pokemonFactory(9, 'Blastoise', ['Water'], blastoiseMovesArr);
+
+const caterpie = pokemonFactory(10, 'Caterpie', ['Bug'], caterpieMovesArr);
+const metapod = pokemonFactory(11, 'Metapod', ['Bug'], metapodMovesArr);
+const butterfree = pokemonFactory(12, 'Butterfree', ['Bug', 'Flying'], butterfreeMovesArr);
+
+const weedle = pokemonFactory(13, 'Weedle', ['Bug', 'Poison'], weedleMovesArr);
+const kakuna = pokemonFactory(14, 'Kakuna', ['Bug', 'Poison'], kakunaMovesArr);
+const beedrill = pokemonFactory(15, 'Beedrill', ['Bug', 'Poison'], beedrillMovesArr);
+
+const pidgey = pokemonFactory(16, 'Pidgey', ['Normal', 'Flying'], pidgeyMovesArr);
+const pidgeotto = pokemonFactory(17, 'Pidgeotto', ['Normal', 'Flying'], pidgeottoMovesArr);
+const pidgeot = pokemonFactory(18, 'Pidgeot', ['Normal', 'Flying'], pidgeotMovesArr);
+
+const rattata = pokemonFactory(19, 'Rattata', ['Normal'], rattataMovesArr);
+const raticate = pokemonFactory(20, 'Raticate', ['Normal'], raticateMovesArr);
+
+//Item array
+
+const allItems = 'X-Attack X-Defense X-Sp.Attack X-Speed X-Accuracy Dire-Hit Guard-Spec. X-Sp.Def Full-Restore Hyper-Potion Max-Potion Potion Super-Potion Antidote Awakening Burn-Heal Full-Heal Ice-Heal Paralyze-Heal Max-Revive Revive Ether Max-Ether Elixir Max-Elixir';
+const allItemsArr = allItems.split(' ');
+
+
+
+
