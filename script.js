@@ -19,7 +19,7 @@ const charizardMovesArr = charizardMovesStr.split(' ');
 
 //007-009
 
-const squirtleMovesStr = 'Tackle Tail-Whip Water-Gun Withdraw Rapid-Spin Bite Water-Pulse Protect Rain-Dance Aqua-Tail Shll-Smash Iron-Defense Hydro-Pump Wave-Crash';
+const squirtleMovesStr = 'Tackle Tail-Whip Water-Gun Withdraw Rapid-Spin Bite Water-Pulse Protect Rain-Dance Aqua-Tail Shell-Smash Iron-Defense Hydro-Pump Wave-Crash';
 const squirtleMovesArr = squirtleMovesStr.split(' ');
 
 const wartortleMovesArr = squirtleMovesArr;
@@ -29,7 +29,7 @@ const blastoiseMovesArr = blastoiseMovesStr.split(' ');
 
 //010-012
 
-const caterpieMovesStr = 'Tackle String-Shot Bug-Bite';
+const caterpieMovesStr = 'Tackle String-Shot Bug-Bite Empty';
 const caterpieMovesArr = caterpieMovesStr.split(' ');
 
 const metapodMovesStr = 'Tackle String-Shot Bug-Bite Harden';
@@ -40,10 +40,10 @@ const butterfreeMovesArr = butterfreeMovesStr.split(' ');
 
 //013-015
 
-const weedleMovesStr = 'Poison-Sting String-Shot';
+const weedleMovesStr = 'Poison-Sting String-Shot Empty Empty';
 const weedleMovesArr = weedleMovesStr.split(' ');
 
-const kakunaMovesStr = 'Poison-Sting String-Shot Harden';
+const kakunaMovesStr = 'Poison-Sting String-Shot Harden Empty';
 const kakunaMovesArr = kakunaMovesStr.split(' ');
 
 const beedrillMovesStr = 'Poison-Sting String-Shot Harden Fury-Attack Focus-Energy Twineedle Rage Pin-Missle Agility';
@@ -81,7 +81,7 @@ const pokemonFactory = (index, name, type, movesArr) =>{
             setMoves.push(newPossibleMoves[moveIndex]);
             newPossibleMoves.splice(moveIndex, 1 );
           }
-          return setMoves;
+          return `${setMoves[0]}, ${setMoves[1]}, ${setMoves[2]} and ${setMoves[3]}.`;
         }
     }
 }
@@ -113,11 +113,69 @@ const pidgeot = pokemonFactory(18, 'Pidgeot', ['Normal', 'Flying'], pidgeotMoves
 const rattata = pokemonFactory(19, 'Rattata', ['Normal'], rattataMovesArr);
 const raticate = pokemonFactory(20, 'Raticate', ['Normal'], raticateMovesArr);
 
+const pokemonArr = [bulbasaur, ivysaur, venusaur, charmander, charmeleon, charizard, squirtle, wartortle, blastoise, caterpie, metapod, butterfree, weedle, kakuna, beedrill, pidgey, pidgeotto, pidgeot, rattata, raticate];
+
 //Item array
 
 const allItems = 'X-Attack X-Defense X-Sp.Attack X-Speed X-Accuracy Dire-Hit Guard-Spec. X-Sp.Def Full-Restore Hyper-Potion Max-Potion Potion Super-Potion Antidote Awakening Burn-Heal Full-Heal Ice-Heal Paralyze-Heal Max-Revive Revive Ether Max-Ether Elixir Max-Elixir';
 const allItemsArr = allItems.split(' ');
 
+const randomFunction = (pokeArr, itemList) =>{
+  let chosenPokemon = [];
+  let subtractivePokemonList = pokeArr;
+  for (let i=0; i<6; i++){
+    let chosenIndex = Math.floor(Math.random()*subtractivePokemonList.length);
+    chosenPokemon.push(subtractivePokemonList[chosenIndex]);
+    subtractivePokemonList.splice(chosenIndex, 1 );
+  }
+
+ let chosenItems = [];
+ let subtractiveItemList = itemList;
+ for (let i=0; i<6; i++){
+  let chosenIndex = Math.floor(Math.random()*subtractiveItemList.length);
+  chosenItems.push(subtractiveItemList[chosenIndex]);
+  subtractiveItemList.splice(chosenIndex, 1);
+ }
+ 
+ console.log(`Here is your Comp-lineup!`);
+ console.log(`Pokemon 1: ${chosenPokemon[0].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[0].randMoves());
+ console.log(' ');
+
+ console.log(`Pokemon 2: ${chosenPokemon[1].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[1].randMoves());
+ console.log(' ');
+
+ console.log(`Pokemon 3: ${chosenPokemon[2].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[2].randMoves());
+ console.log(' ');
+
+ console.log(`Pokemon 4: ${chosenPokemon[3].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[3].randMoves());
+ console.log(' ');
+
+ console.log(`Pokemon 5: ${chosenPokemon[4].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[4].randMoves());
+ console.log(' ');
+
+ console.log(`Pokemon 6: ${chosenPokemon[5].name}`);
+ console.log('Moves:');
+ console.log(chosenPokemon[5].randMoves());
+ console.log(' ');
+
+ console.log(`Your Items are:`);
+ console.log(chosenItems);
+ console.log(' ');
+
+ console.log('Good Luck!');
+ 
+}
 
 
+randomFunction(pokemonArr, allItemsArr);
 
