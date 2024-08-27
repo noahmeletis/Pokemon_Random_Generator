@@ -4,7 +4,7 @@ This project randomly assigns the user 6 pokemon, each with a random 4 move set 
 This project notably makes use of object factory functions to quickly enter in Pokemon and .split() to turn large strings of move sets and item lists to an array which is easier to work with for randomising functions.
 Due to the factory functions ease of use, feel free to add your own Pokemon to the list to include them in the generation, though entering in the move sets can be a little tedious!
 
-Just run the script.js file as is to return the results of the randomisation. !
+Just run the script.js file as is to return the results of the randomisation!
 
 ## Sources
 
